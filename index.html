@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toads - Media & Entertainment Education</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2e7d32',secondary:'#81c784'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<!-- Import Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+
+.campus-bg {
+background-image: url('https://readdy.ai/api/search-image?query=Modern%20educational%20campus%20with%20students%20walking%2C%20beautiful%20architecture%2C%20sunny%20day%2C%20green%20trees%2C%20professional%20photography%20style%2C%20wide%20angle%20view&width=600&height=400&seq=2&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+input:focus, select:focus {
+outline: none;
+border-color: #2e7d32;
+}
+.course-card:hover .arrow-icon {
+transform: translateX(5px);
+}
+.arrow-icon {
+transition: transform 0.3s ease;
+}
+
+ /* Make sure navigation buttons are visible and clickable */
+ .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 50px !important;
+    height: 50px !important;
+    margin-top: -25px;
+    z-index: 1000 !important;
+    cursor: pointer !important;
+    color: white !important;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    cursor: pointer;
+  }
+
+  .swiper-button-next {
+    right: 20px;
+  }
+
+  .swiper-button-prev {
+    left: 20px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 24px !important;
+    font-weight: bold;
+
+  }
+  
+  /* Ensure container allows clickthrough */
+  .swiper {
+    pointer-events: auto !important;
+  }
+  
+  /* Make sure slides don't interfere with button clicks */
+  .swiper-slide {
+    pointer-events: none;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+</style>
+</head>
+<body class="bg-white w-full">
+<!-- Header -->
+<!-- <header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<h1 class="text-2xl font-['Pacifico'] text-primary">Toads</h1>
+</div>
+<nav class="hidden md:flex space-x-6">
+<a href="#" class="text-gray-700 hover:text-primary">Home</a>
+<a href="#" class="text-gray-700 hover:text-primary">Courses</a>
+<a href="#" class="text-gray-700 hover:text-primary">About Us</a>
+<a href="#" class="text-gray-700 hover:text-primary">Success Stories</a>
+<a href="#" class="text-gray-700 hover:text-primary">Contact</a>
+</nav>
+<button class="md:hidden w-8 h-8 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</header> -->
+<!-- Hero Section -->
+<!-- <section class="hero-bg relative">
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+<div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center relative z-10">
+<div class="w-full md:w-1/2 text-white mb-10 md:mb-0">
+<h2 class="text-4xl md:text-5xl font-bold mb-4">LEARN FROM THE LEGENDS</h2>
+<p class="text-xl mb-6">Prepare yourself for a rewarding career in the exciting world of media & entertainment. Join the industry's most trusted education partner.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-green-700 text-white py-3 px-6 !rounded-button whitespace-nowrap transition duration-300 flex items-center">
+Explore Courses
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+<button class="bg-white hover:bg-gray-100 text-primary py-3 px-6 !rounded-button whitespace-nowrap transition duration-300 flex items-center">
+Watch Demo
+<i class="ri-play-circle-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
+<h3 class="text-primary text-xl font-bold mb-6">STUDENT ENQUIRY FORM</h3>
+<form>
+<div class="mb-4">
+<label for="fullName" class="block text-gray-700 text-sm font-medium mb-1">Full Name</label>
+<input type="text" id="fullName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your full name">
+</div>
+<div class="mb-4">
+<label for="phone" class="block text-gray-700 text-sm font-medium mb-1">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your phone number">
+</div>
+<div class="mb-4">
+<label for="email" class="block text-gray-700 text-sm font-medium mb-1">Email</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your email address">
+</div>
+<div class="mb-6">
+<label for="course" class="block text-gray-700 text-sm font-medium mb-1">Select Course</label>
+<div class="relative">
+<select id="course" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none pr-8 focus:border-primary">
+<option value="" selected disabled>Choose a course</option>
+<option value="animation">Animation</option>
+<option value="vfx">VFX</option>
+<option value="gaming">Gaming - Immersive Design</option>
+<option value="digital">Digital Designing & Marketing</option>
+<option value="web">Web & Graphics</option>
+<option value="uiux">UI/UX</option>
+<option value="broadcast">Broadcast</option>
+<option value="multimedia">Multimedia</option>
+<option value="shortterm">Short Term Courses</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-red-600 text-white py-3 !rounded-button whitespace-nowrap transition duration-300 font-medium">
+SUBMIT
+</button>
+</form>
+</div>
+</div>
+</div>
+</section> -->
+
+
+
+
+<!-- Hero Section -->
+<section class="h-screen  overflow-hidden">
+    <!-- Swiper Background Slider -->
+    <div class="swiper heroSwiper  inset-0 z-0">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./assets/leadpage_images/Toads 1.jpg" class="w-full h-full object-contain" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/leadpage_images/Toads 2.jpg" class="w-full h-full object-contain" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/leadpage_images/Toads 3.jpg" class="w-full h-full object-contain" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/leadpage_images/Toads 4.jpg" class="w-full h-full object-contain" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/leadpage_images/Toads 5.jpg" class="w-full h-full object-contain" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/leadpage_images/Toads 6.jpg" class="w-full h-full object-contain" />
+            </div>
+        </div>
+        
+        <!-- Navigation buttons with higher z-index and improved styling -->
+        <div class="swiper-button-next" style="z-index: 20; width: 50px; height: 50px;"></div>
+        <div class="swiper-button-prev" style="z-index: 20; width: 50px; height: 50px;"></div>
+    </div>
+    <!-- Gradient Overlay -->
+    <div class=" inset-0 bg-gradient-to-r from-black/70 to-transparent z-10"></div>
+  
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center relative z-20">
+      <div class="w-full md:w-1/2 text-white mb-10 md:mb-0">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Toads</h2>
+        <p class="text-xl mb-6">
+
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button
+            class="bg-primary hover:bg-green-700 text-white py-3 px-6 !rounded-button whitespace-nowrap transition duration-300 flex items-center"
+          >
+            Explore Courses
+            <i class="ri-arrow-right-line ml-2"></i>
+          </button>
+          <button
+            class="bg-white hover:bg-gray-100 text-primary py-3 px-6 !rounded-button whitespace-nowrap transition duration-300 flex items-center"
+          >
+            Watch Demo
+            <i class="ri-play-circle-line ml-2"></i>
+          </button>
+        </div>
+      </div>
+<!--   
+      <div class="w-full md:w-1/2">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
+          <h3 class="text-primary text-xl font-bold mb-6">
+            STUDENT ENQUIRY FORM
+          </h3>
+          <form>
+            <div class="mb-4">
+              <label
+                for="fullName"
+                class="block text-gray-700 text-sm font-medium mb-1"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                id="fullName"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                placeholder="Enter your full name"
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="phone"
+                class="block text-gray-700 text-sm font-medium mb-1"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                placeholder="Enter your phone number"
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="email"
+                class="block text-gray-700 text-sm font-medium mb-1"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                placeholder="Enter your email address"
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="course"
+                class="block text-gray-700 text-sm font-medium mb-1"
+                >Select Course</label
+              >
+              <div class="relative">
+                <select
+                  id="course"
+                  class="w-full px-4 py-2 border border-gray-300 rounded appearance-none pr-8 focus:border-primary"
+                >
+                  <option value="" selected disabled>Choose a course</option>
+                  <option value="animation">Animation</option>
+                  <option value="vfx">VFX</option>
+                  <option value="gaming">Gaming - Immersive Design</option>
+                  <option value="digital">Digital Designing & Marketing</option>
+                  <option value="web">Web & Graphics</option>
+                  <option value="uiux">UI/UX</option>
+                  <option value="broadcast">Broadcast</option>
+                  <option value="multimedia">Multimedia</option>
+                  <option value="shortterm">Short Term Courses</option>
+                </select>
+                <div
+                  class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+                >
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-primary hover:bg-red-600 text-white py-3 !rounded-button whitespace-nowrap transition duration-300 font-medium"
+            >
+              SUBMIT
+            </button>
+          </form>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+
+
+<!-- Banner -->
+<section class="bg-primary py-8">
+    <div class="container mx-auto px-4">
+      <h2 class="text-white text-center text-2xl md:text-4xl font-bold">
+        India’s 1ˢᵗ Generative AI Academy
+      </h2>
+    </div>
+  </section>
+  
+  <!-- Introduction Section -->
+  <section class="py-16 bg-gray-200 " id="registration">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-start justify-between gap-10">
+        
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold mb-6">
+            Transform Your Passion Into a Rewarding Career
+          </h2>
+          <p class="text-gray-700 mb-6">
+            At Toads Animation, we are driven to make you employable in the media & entertainment industry in fields such as animation, VFX, gaming, web design, AR, VR, web & graphics, UI/UX, broadcast, and multimedia.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Our courses are designed with our industry-proven Edge Advantage: Creativity, Resilience, teamwork, learning agility, business presentation skills, and leadership. These are the skills that help you land lucrative jobs in top companies globally.
+          </p>
+          <button class="bg-primary hover:bg-green-700 text-white py-3 px-6 rounded-md whitespace-nowrap transition duration-300 flex items-center">
+            BOOK YOUR CAREER GUIDE WITH TOADS
+            <i class="ri-arrow-right-line ml-2"></i>
+          </button>
+        </div>
+  
+        <!-- Right Form -->
+        <div class="w-full md:w-1/2">
+          <div class="bg-white p-8 rounded-lg shadow-lg max-w-md ml-auto">
+            <h3 class="text-primary text-xl font-bold mb-6">
+              STUDENT ENQUIRY FORM
+            </h3>
+            <form  id="contactForm3">
+              <div class="mb-4">
+                <label for="firstName" class="block text-gray-700 text-sm font-medium mb-1">
+                   Name
+                </label>
+                <input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your full name" required />
+              </div>
+              <div class="mb-4">
+                <label for="lastName" class="block text-gray-700 text-sm font-medium mb-1">
+                   Name
+                </label>
+                <input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your full name" required />
+              </div>
+              <div class="mb-4">
+                <label for="phone" class="block text-gray-700 text-sm font-medium mb-1">
+                  Phone Number
+                </label>
+                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your phone number" required/>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-medium mb-1">
+                  Email
+                </label>
+                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your email address" required/>
+              </div>
+              <!-- <div class="mb-6">
+                <label for="course" class="block text-gray-700 text-sm font-medium mb-1">
+                  Select Course
+                </label>
+                <div class="relative">
+                  <select id="course" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none pr-8 focus:border-primary">
+                    <option value="" selected disabled>Choose a course</option>
+                    <option value="animation">Animation</option>
+                    <option value="vfx">VFX</option>
+                    <option value="gaming">Gaming - Immersive Design</option>
+                    <option value="digital">Digital Designing & Marketing</option>
+                    <option value="web">Web & Graphics</option>
+                    <option value="uiux">UI/UX</option>
+                    <option value="broadcast">Broadcast</option>
+                    <option value="multimedia">Multimedia</option>
+                    <option value="shortterm">Short Term Courses</option>
+                  </select>
+                  <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+              </div> -->
+              <button type="submit" class="w-full bg-primary hover:bg-red-600 text-white py-3 rounded-md whitespace-nowrap transition duration-300 font-medium">
+                SUBMIT
+              </button>
+            </form>
+            <p id="statusMessage1" class="text-center mt-4"></p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+<!-- Courses Section -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12 text-primary">OUR COURSES</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Animation -->
+<div class="course-card bg-indigo-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+<div style="background-image: url('./assets/courses/b.vox.jpg');" class="h-48 bg-cover bg-center"></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2"> Degree</h3>
+<p class="text-indigo-200 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+<div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+<i class="ri-arrow-right-line text-white arrow-icon"></i>
+</div>
+</div>
+</div>
+<!-- VFX -->
+<div class="course-card bg-green-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+<div style="background-image: url('./assets/courses/Animation_Gold.jpg');" class="h-48 bg-cover bg-center"></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Animation</h3>
+<p class="text-green-100 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+<div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+<i class="ri-arrow-right-line text-white arrow-icon"></i>
+</div>
+</div>
+</div>
+<!-- Gaming -->
+<div class="course-card bg-green-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+<div style="background-image: url('./assets/courses/graphic.jpg');" class="h-48 bg-cover bg-center"></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Graphics Design</h3>
+<p class="text-green-100 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+<div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+<i class="ri-arrow-right-line text-white arrow-icon"></i>
+</div>
+</div>
+</div>
+<!-- Digital Designing -->
+<div class="course-card bg-blue-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+<div style="background-image: url('./assets/courses/Gaming.jpg');" class="h-48 bg-cover bg-center"></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Gaming</h3>
+<p class="text-blue-100 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+<div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+<i class="ri-arrow-right-line text-white arrow-icon"></i>
+</div>
+</div>
+</div>
+<!-- Web & Graphics -->
+<div class="course-card bg-yellow-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+<div style="background-image: url('./assets/courses/AI_PRO_shotturm_COURSE.jpg');" class="h-48 bg-cover bg-center"></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Short Term Courses</h3>
+<p class="text-yellow-100 mb-4">Courses that train you for careers in graphic designing, web designing & development.</p>
+<div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+<i class="ri-arrow-right-line text-white arrow-icon"></i>
+</div>
+</div>
+</div>
+<!-- UI/UX -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+<div style="background-image: url('./assets/courses/vfx_Gold.jpg');" class="h-48 bg-cover bg-center"></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">VFX</h3>
+<p class="text-indigo-100 mb-4">A course that trains you on all aspects of user interface and user experience design.</p>
+<div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+<i class="ri-arrow-right-line text-white arrow-icon"></i>
+</div>
+</div>
+</div>
+
+</div>
+<div class="text-center mt-12">
+<p class="text-gray-700 mb-4">Call us for a rewarding career</p>
+<a href="#registration"><button class="bg-primary hover:bg-green-700 text-white py-3 px-8 !rounded-button whitespace-nowrap transition duration-300 font-medium">
+FILL THE FORM
+</button></a>
+</div>
+</div>
+</section>
+<!-- Why Toads Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-primary">WHY Toads?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Feature 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-rocket-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Guaranteed Internship to Job Path</h3>
+        <p class="text-gray-600">Begin with an industry-backed internship that leads directly to full-time career opportunities with our partner studios.</p>
+      </div>
+      <!-- Feature 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-computer-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Master Emerging Technologies</h3>
+        <p class="text-gray-600">Stay ahead of the curve with hands-on training in cutting-edge tools and industry-leading software and techniques.</p>
+      </div>
+      <!-- Feature 3 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-footprint-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Studio Environment Learning</h3>
+        <p class="text-gray-600">Train in a professional production setup that mirrors real-world studios, preparing you for immediate industry integration.</p>
+      </div>
+      <!-- Feature 4 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-robot ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">AI-Integrated Curriculum</h3>
+        <p class="text-gray-600">Leverage AI-powered tools that enhance your creative workflow and accelerate your learning process.</p>
+      </div>
+      <!-- Feature 5 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-project-diagram-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Live Project Experience</h3>
+        <p class="text-gray-600">Work on actual industry projects to build an impressive portfolio that demonstrates real production experience.</p>
+      </div>
+      <!-- Feature 6 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-palette-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Industry Professional Training</h3>
+        <p class="text-gray-600">Learn directly from active studio artists who bring current industry practices and insights to your education.</p>
+      </div>
+      <!-- Feature 7 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-handshake-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Complete Placement Support</h3>
+        <p class="text-gray-600">Receive comprehensive career guidance, interview preparation, and direct connections to hiring studios.</p>
+      </div>
+      <!-- Feature 8 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-global-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Global Career Opportunities</h3>
+        <p class="text-gray-600">Access employment possibilities across India and international markets through our global studio network.</p>
+      </div>
+      <!-- Feature 9 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-comments-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Global Studio Network</h3>
+        <p class="text-gray-600">Connect with leading production houses and industry experts through our extensive professional network.</p>
+      </div>
+      <!-- Feature 10 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-award-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">MESC Certification</h3>
+        <p class="text-gray-600">Earn industry-recognized credentials from the Media & Entertainment Skills Council that validate your expertise.</p>
+      </div>
+      <!-- Feature 11 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-book-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Industry-Crafted Curriculum</h3>
+        <p class="text-gray-600">Follow a comprehensive syllabus designed by active professionals to ensure job-ready skills development.</p>
+      </div>
+      <!-- Feature 12 -->
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-map-pin-line ri-xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Studio Visits & Industry Exposure</h3>
+        <p class="text-gray-600">Gain firsthand experience of professional workflows through exclusive visits to operational production studios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-gray-100">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-2xl md:text-3xl font-bold mb-6">Your skills. Your future. Your stage. Train with Toads Animation and step into the world of Media & Entertainment.</h2>
+<a href="#registration"><button class="bg-primary hover:bg-green-700 text-white py-3 px-8 !rounded-button whitespace-nowrap transition duration-300 font-medium">
+FILL THE FORM
+</button></a>
+</div>
+</section>
+<!-- Disclaimer -->
+<section class="bg-blue-800 py-4 text-white text-sm">
+<div class="container mx-auto px-4">
+<p class="text-center mt-2">Note - Toads Animation is ISO 9001:2015 certified organization.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+<div class="container mx-auto px-4">
+<div class="flex justify-between items-center">
+<div>
+<h1 class="text-2xl font-['Pacifico'] text-white">Toads</h1>
+</div>
+<div>
+<p>Copyright © 2025, Toads Ltd. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Form validation
+const form = document.querySelector('form');
+if (form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const fullName = document.getElementById('fullName').value;
+const phone = document.getElementById('phone').value;
+const email = document.getElementById('email').value;
+const course = document.getElementById('course').value;
+if (!fullName || !phone || !email || !course) {
+alert('Please fill in all required fields');
+return;
+}
+alert('Thank you for your enquiry! Our team will contact you shortly.');
+form.reset();
+});
+}
+});
+
+// swiper
+document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Swiper
+        const swiper = new Swiper(".heroSwiper", {
+            loop: true,
+            speed: 1000,
+            effect: "fade",
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+        
+        // Additional event listeners to ensure buttons work
+        document.querySelector('.swiper-button-next').addEventListener('click', function(e) {
+            e.preventDefault();
+            swiper.slideNext();
+        });
+        
+        document.querySelector('.swiper-button-prev').addEventListener('click', function(e) {
+            e.preventDefault();
+            swiper.slidePrev();
+        });
+    });
+
+    
+document.getElementById("contactForm3").addEventListener("submit", async (e) => {
+    e.preventDefault(); // Prevent page reload
+
+    const statusMessage = document.getElementById("statusMessage1");
+    statusMessage.innerText = "Submitting...";
+    statusMessage.style.color = "blue";
+
+    const formData = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+    };
+
+    try {
+        const response = await fetch("https://toadsbackend.onrender.com/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+        statusMessage.innerText = data.message;
+        statusMessage.style.color = "green";
+
+        // Reset form after successful submission
+        e.target.reset();
+    } catch (error) {
+        statusMessage.innerText = "Error sending message!";
+        statusMessage.style.color = "red";
+    }
+});
+
+
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '1759312624931527'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=1759312624931527&ev=PageView
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+</body>
+</html>
