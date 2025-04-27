@@ -177,116 +177,83 @@ SUBMIT
 
 
 <!-- Hero Section -->
-<section class="h-screen  overflow-hidden">
-    <!-- Swiper Background Slider -->
-    <div class="swiper heroSwiper  inset-0 z-0">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="./assets/leadpage_images/Toads 1.jpg" class="w-full h-full object-contain" />
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/leadpage_images/Toads 2.jpg" class="w-full h-full object-contain" />
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/leadpage_images/Toads 3.jpg" class="w-full h-full object-contain" />
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/leadpage_images/Toads 4.jpg" class="w-full h-full object-contain" />
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/leadpage_images/Toads 5.jpg" class="w-full h-full object-contain" />
-            </div>
-            <div class="swiper-slide">
-                <img src="./assets/leadpage_images/Toads 6.jpg" class="w-full h-full object-contain" />
-            </div>
-        </div>
-        
-        <!-- Navigation buttons with higher z-index and improved styling -->
-        <div class="swiper-button-next" style="z-index: 20; width: 50px; height: 50px;"></div>
-        <div class="swiper-button-prev" style="z-index: 20; width: 50px; height: 50px;"></div>
-    </div>
-    <!-- Gradient Overlay -->
-    <div class=" inset-0 bg-gradient-to-r from-black/70 to-transparent z-10"></div>
-  
-    <!-- Main Content -->
-    <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center relative z-20">
-      <div class="w-full md:w-1/2 text-white mb-10 md:mb-0">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Toads</h2>
-        <p class="text-xl mb-6">
-
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <button
-            class="bg-primary hover:bg-green-700 text-white py-3 px-6 !rounded-button whitespace-nowrap transition duration-300 flex items-center"
-          >
-            Explore Courses
-            <i class="ri-arrow-right-line ml-2"></i>
-          </button>
-          <button
-            class="bg-white hover:bg-gray-100 text-primary py-3 px-6 !rounded-button whitespace-nowrap transition duration-300 flex items-center"
-          >
-            Watch Demo
-            <i class="ri-play-circle-line ml-2"></i>
-          </button>
-        </div>
+<section class="relative h-screen w-full overflow-hidden">
+  <!-- Swiper Background Slider -->
+  <div class="swiper heroSwiper absolute inset-0 z-0">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./assets/leadpage_images/Toads 1.jpg" class="w-full h-full object-cover" />
       </div>
-<!--   
-      <div class="w-full md:w-1/2">
-        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
-          <h3 class="text-primary text-xl font-bold mb-6">
-            STUDENT ENQUIRY FORM
-          </h3>
-          <form>
+      <div class="swiper-slide">
+        <img src="./assets/leadpage_images/Toads 2.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/leadpage_images/Toads 3.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/leadpage_images/Toads 4.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/leadpage_images/Toads 5.jpg" class="w-full h-full object-cover" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/leadpage_images/Toads 6.jpg" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next z-10"></div>
+    <div class="swiper-button-prev z-10"></div>
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-10"></div>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-16 flex flex-col items-center justify-center relative z-20 text-white">
+    <h1 class="text-4xl md:text-6xl font-bold text-center">Welcome to Toad's Academy</h1>
+    <p class="mt-4 text-lg md:text-2xl text-center">Learn, Create, Innovate</p>
+  </div>
+
+  <!-- Enquiry Form Popup -->
+  <div id="enquiryForm" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md relative">
+      <button id="closeForm" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl font-bold">&times;</button>
+
+      <h3 class="text-2xl font-bold text-center text-primary mb-6">Student Enquiry Form</h3>
+
+   
+          <form  id="contactForm3">
             <div class="mb-4">
-              <label
-                for="fullName"
-                class="block text-gray-700 text-sm font-medium mb-1"
-                >Full Name</label
-              >
-              <input
-                type="text"
-                id="fullName"
-                class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                placeholder="Enter your full name"
-              />
+              <label for="firstName" class="block text-gray-700 text-sm font-medium mb-1">
+                 Name
+              </label>
+              <input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your full name" required />
             </div>
             <div class="mb-4">
-              <label
-                for="phone"
-                class="block text-gray-700 text-sm font-medium mb-1"
-                >Phone Number</label
-              >
-              <input
-                type="tel"
-                id="phone"
-                class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                placeholder="Enter your phone number"
-              />
+              <label for="lastName" class="block text-gray-700 text-sm font-medium mb-1">
+                 Name
+              </label>
+              <input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your full name" required />
             </div>
             <div class="mb-4">
-              <label
-                for="email"
-                class="block text-gray-700 text-sm font-medium mb-1"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                placeholder="Enter your email address"
-              />
+              <label for="phone" class="block text-gray-700 text-sm font-medium mb-1">
+                Phone Number
+              </label>
+              <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your phone number" required/>
             </div>
-            <div class="mb-6">
-              <label
-                for="course"
-                class="block text-gray-700 text-sm font-medium mb-1"
-                >Select Course</label
-              >
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 text-sm font-medium mb-1">
+                Email
+              </label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Enter your email address" required/>
+            </div>
+            <!-- <div class="mb-6">
+              <label for="course" class="block text-gray-700 text-sm font-medium mb-1">
+                Select Course
+              </label>
               <div class="relative">
-                <select
-                  id="course"
-                  class="w-full px-4 py-2 border border-gray-300 rounded appearance-none pr-8 focus:border-primary"
-                >
+                <select id="course" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none pr-8 focus:border-primary">
                   <option value="" selected disabled>Choose a course</option>
                   <option value="animation">Animation</option>
                   <option value="vfx">VFX</option>
@@ -298,24 +265,20 @@ SUBMIT
                   <option value="multimedia">Multimedia</option>
                   <option value="shortterm">Short Term Courses</option>
                 </select>
-                <div
-                  class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                >
+                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
                   <i class="ri-arrow-down-s-line"></i>
                 </div>
               </div>
-            </div>
-            <button
-              type="submit"
-              class="w-full bg-primary hover:bg-red-600 text-white py-3 !rounded-button whitespace-nowrap transition duration-300 font-medium"
-            >
+            </div> -->
+            <button type="submit" class="w-full bg-primary hover:bg-red-600 text-white py-3 rounded-md whitespace-nowrap transition duration-300 font-medium">
               SUBMIT
             </button>
           </form>
-        </div>
-      </div> -->
+          <p id="statusMessage1" class="text-center mt-4"></p>
+    
     </div>
-  </section>
+  </div>
+</section>
 
 
 
@@ -339,10 +302,17 @@ SUBMIT
             Transform Your Passion Into a Rewarding Career
           </h2>
           <p class="text-gray-700 mb-6">
-            At Toads Animation, we are driven to make you employable in the media & entertainment industry in fields such as animation, VFX, gaming, web design, AR, VR, web & graphics, UI/UX, broadcast, and multimedia.
-          </p>
-          <p class="text-gray-700 mb-6">
-            Our courses are designed with our industry-proven Edge Advantage: Creativity, Resilience, teamwork, learning agility, business presentation skills, and leadership. These are the skills that help you land lucrative jobs in top companies globally.
+            Unlock Your Creative Future at Toads Academy
+            Welcome to Toads Academy — where passion meets purpose and creativity finds its voice. As
+            the educational wing of Flying Toads, one of India’s most respected VFX studios with over two
+            decades of industry leadership, we offer more than just education — we offer transformation.
+            Whether you dream of mastering Animation, VFX, Game Development, or diving into the
+            possibilities of Generative AI, Toads Academy is your launchpad. Our immersive, hands-on
+            learning model is guided by industry veterans who mentor students to thrive in today’s
+            fast-paced creative industries. Blending artistic excellence with the latest technologies, we’re
+            here to unlock your full potential and shape you into the creative professional the future is
+            waiting for.
+            
           </p>
           <button class="bg-primary hover:bg-green-700 text-white py-3 px-6 rounded-md whitespace-nowrap transition duration-300 flex items-center">
             BOOK YOUR CAREER GUIDE WITH TOADS
@@ -419,13 +389,27 @@ SUBMIT
 <section class="py-16">
 <div class="container mx-auto px-4">
 <h2 class="text-3xl font-bold text-center mb-12 text-primary">OUR COURSES</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center">
 <!-- Animation -->
 <div class="course-card bg-indigo-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
 <div style="background-image: url('./assets/courses/b.vox.jpg');" class="h-48 bg-cover bg-center"></div>
 <div class="p-6">
-<h3 class="text-xl font-bold text-white mb-2"> Degree</h3>
-<p class="text-indigo-200 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+<h3 class="text-xl font-bold text-white mb-2"> B.Voc in Graphics and Animation (Degree Program)</h3>
+<p class="text-indigo-200 mb-4">
+  A comprehensive 3-year undergraduate program blending graphic design principles with
+animation techniques, preparing students for dynamic roles in the creative industry.
+
+  <ul class="text-white ">
+  <li>
+    ○ Curriculum aligned with industry standards.
+  </li>
+  <li>
+    ○ Emphasis on both 2D and 3D animation
+  </li>
+  <li>
+    ○ Hands-on projects and portfolio development.
+  </li>
+</ul></p>
 <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
 <i class="ri-arrow-right-line text-white arrow-icon"></i>
 </div>
@@ -433,10 +417,26 @@ SUBMIT
 </div>
 <!-- VFX -->
 <div class="course-card bg-green-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
-<div style="background-image: url('./assets/courses/Animation_Gold.jpg');" class="h-48 bg-cover bg-center"></div>
+<div style="background-image: url('./assets/courses/vfx_Prime.jpg');" class="h-48 bg-cover bg-center"></div>
 <div class="p-6">
-<h3 class="text-xl font-bold text-white mb-2">Animation</h3>
-<p class="text-green-100 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+  <h3 class="text-xl font-bold text-white mb-2"> VFX Apex (VFX Programs)</h3>
+  <p class="text-indigo-200 mb-4">
+    2. VFX Apex (VFX Programs)
+    An advanced diploma focusing on high-end visual effects techniques used in film and
+    television
+  
+    <ul class="text-white ">
+    <li>
+      ○ Training in compositing, motion tracking, and CGI integration.
+    </li>
+    <li>
+      ○ Exposure to industry-standard software.
+    </li>
+    <li>
+      ○ Projects simulating real-world VFX challenges.
+
+    </li>
+  </ul></p>
 <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
 <i class="ri-arrow-right-line text-white arrow-icon"></i>
 </div>
@@ -444,10 +444,27 @@ SUBMIT
 </div>
 <!-- Gaming -->
 <div class="course-card bg-green-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
-<div style="background-image: url('./assets/courses/graphic.jpg');" class="h-48 bg-cover bg-center"></div>
+<div style="background-image: url('./assets/courses/vfx_Elite.jpg');" class="h-48 bg-cover bg-center"></div>
 <div class="p-6">
-<h3 class="text-xl font-bold text-white mb-2">Graphics Design</h3>
-<p class="text-green-100 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+  <h3 class="text-xl font-bold text-white mb-2"> VFX Titans (VFX Programs)</h3>
+  <p class="text-indigo-200 mb-4">
+    A specialized program designed to master complex VFX processes and workflows.
+
+  
+    <ul class="text-white ">
+    <li>
+      ○ In-depth study of particle effects, dynamics, and simulations.
+
+    </li>
+    <li>
+      ○ Collaboration on team-based projects.
+
+    </li>
+    <li>
+      ○ Mentorship from industry veterans.
+
+    </li>
+  </ul></p>
 <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
 <i class="ri-arrow-right-line text-white arrow-icon"></i>
 </div>
@@ -455,10 +472,26 @@ SUBMIT
 </div>
 <!-- Digital Designing -->
 <div class="course-card bg-blue-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
-<div style="background-image: url('./assets/courses/Gaming.jpg');" class="h-48 bg-cover bg-center"></div>
+<div style="background-image: url('./assets/courses/vfx_Gold.jpg');" class="h-48 bg-cover bg-center"></div>
 <div class="p-6">
-<h3 class="text-xl font-bold text-white mb-2">Gaming</h3>
-<p class="text-blue-100 mb-4">Courses that prepare you to make an impact in the digital space.</p>
+  <h3 class="text-xl font-bold text-white mb-2"> VFX Nova (VFX Programs)
+  </h3>
+  <p class="text-indigo-200 mb-4">
+    An entry-level course introducing the fundamentals of visual effects.
+  
+    <ul class="text-white ">
+    <li>
+      ○ Basics of compositing, green screen, and rotoscoping.
+
+    </li>
+    <li>
+      ○ Hands-on practice with foundational tools.
+
+    </li>
+    <li>
+      ○ Preparation for advanced VFX studies.
+    </li>
+  </ul></p>
 <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
 <i class="ri-arrow-right-line text-white arrow-icon"></i>
 </div>
@@ -466,29 +499,245 @@ SUBMIT
 </div>
 <!-- Web & Graphics -->
 <div class="course-card bg-yellow-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
-<div style="background-image: url('./assets/courses/AI_PRO_shotturm_COURSE.jpg');" class="h-48 bg-cover bg-center"></div>
+<div style="background-image: url('./assets/courses/Animation_Prime.jpg');" class="h-48 bg-cover bg-center"></div>
 <div class="p-6">
-<h3 class="text-xl font-bold text-white mb-2">Short Term Courses</h3>
-<p class="text-yellow-100 mb-4">Courses that train you for careers in graphic designing, web designing & development.</p>
+  <h3 class="text-xl font-bold text-white mb-2"> Animation Apex (Animation Programs)</h3>
+  <p class="text-indigo-200 mb-4">
+    An intensive program covering advanced animation techniques and storytelling.
+
+  
+    <ul class="text-white ">
+    <li>
+      ○ Focus on character animation, rigging, and dynamics.
+
+    </li>
+    <li>
+      ○ Integration of traditional and digital methods.
+
+    </li>
+    <li>
+      ○ Portfolio development with diverse projects.
+    </li>
+  </ul></p>
 <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
 <i class="ri-arrow-right-line text-white arrow-icon"></i>
 </div>
 </div>
 </div>
-<!-- UI/UX -->
+<!-- Animation Titans Card -->
 <div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
-<div style="background-image: url('./assets/courses/vfx_Gold.jpg');" class="h-48 bg-cover bg-center"></div>
-<div class="p-6">
-<h3 class="text-xl font-bold text-white mb-2">VFX</h3>
-<p class="text-indigo-100 mb-4">A course that trains you on all aspects of user interface and user experience design.</p>
-<div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
-<i class="ri-arrow-right-line text-white arrow-icon"></i>
-</div>
-</div>
+  <div style="background-image: url('./assets/courses/Animation_Elite.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">Animation Titans (Animation Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      A course aimed at mastering the art of animation with a focus on industry applications.
+      <ul class="text-white mt-2">
+        <li>○ Advanced studies in motion capture and 3D animation.</li>
+        <li>○ Collaborative projects simulating studio environments.</li>
+        <li>○ Workshops with animation professionals.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
 </div>
 
+<!-- Animation Nova Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/Animation_Gold.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">Animation Nova (Animation Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      A foundational course introducing the principles of animation.
+      <ul class="text-white mt-2">
+        <li>○ Study of timing, spacing, and movement.</li>
+        <li>○ Projects focusing on basic character and object animation.</li>
+        <li>○ Preparation for advanced animation courses.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
 </div>
-<div class="text-center mt-12">
+
+<!-- Gaming Apex Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/Gaming.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">Gaming Apex (Gaming Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      An advanced diploma program focusing on game design and development.
+      <ul class="text-white mt-2">
+        <li>○ Training in game engines like Unity and Unreal.</li>
+        <li>○ Development of playable game prototypes.</li>
+        <li>○ Understanding of game mechanics and user experience.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- UI/UX Apex Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/graphic.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">UI/UX Apex (Design & Motion Graphics Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      A specialized course in user interface and user experience design.
+      <ul class="text-white mt-2">
+        <li>○ Study of user research, wireframing, and prototyping.</li>
+        <li>○ Projects focusing on app and web design.</li>
+        <li>○ Use of tools like Figma and Adobe XD.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Motion Graphics Apex Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/motion\ graphic.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">Motion Graphics Apex (Design & Motion Graphics Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      A program dedicated to the art of motion graphics and visual storytelling.
+      <ul class="text-white mt-2">
+        <li>○ Training in After Effects and Cinema 4D.</li>
+        <li>○ Projects combining animation, typography, and video.</li>
+        <li>○ Understanding of broadcast and digital media requirements.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- VFX Pro Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/vfx_shotturm_COURSE.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">VFX Pro (Professional Certificate Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      A short-term course focusing on practical visual effects skills.
+      <ul class="text-white mt-2">
+        <li>○ Hands-on training in compositing and effects creation.</li>
+        <li>○ Use of industry-standard software.</li>
+        <li>○ Project-based learning approach.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Graphics Design Pro Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/Graphic\ Design_shotturm_COURSE.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">Graphics Design Pro (Professional Certificate Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      A 6-month diploma providing comprehensive training in graphic design principles and tools.
+      <ul class="text-white mt-2">
+        <li>○ Covers composition, typography, color theory, and branding.</li>
+        <li>○ Hands-on experience with Adobe Photoshop, Illustrator, InDesign, and more.</li>
+        <li>○ Integration of AI tools like ChatGPT and Leonardo AI.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Editing Pro Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/Animation_Prime.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">Editing Pro (Professional Certificate Programs)</h3>
+    <p class="text-indigo-200 mb-4">
+      Master the art of video storytelling with professional editing techniques.
+      <ul class="text-white mt-2">
+        <li>○ Learn software like Adobe Premiere Pro and DaVinci Resolve.</li>
+        <li>○ Explore color correction, sound syncing, and visual pacing.</li>
+        <li>○ Work on real-world video projects to build a professional reel.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- 2D Animation Pro Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/Animation_Elite.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">2D Animation Pro</h3>
+    <p class="text-indigo-200 mb-4">
+      Dive into the world of classic animation with a focus on frame-by-frame storytelling.
+      <ul class="text-white mt-2">
+        <li>○ Strong foundation in the 12 principles of animation.</li>
+        <li>○ Projects using Toon Boom and Adobe Animate.</li>
+        <li>○ Character design, lip sync, and scene composition.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- AI Pro Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/AI_PRO_shotturm_COURSE.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">AI Pro</h3>
+    <p class="text-indigo-200 mb-4">
+      A future-forward course combining creativity with artificial intelligence.
+      <ul class="text-white mt-2">
+        <li>○ Hands-on with Midjourney, Runway ML, Leonardo AI, and ChatGPT.</li>
+        <li>○ Applications in concept art, visual development, and automation.</li>
+        <li>○ Understanding ethical AI use in creative industries.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Animation Pro Card -->
+<div class="course-card bg-indigo-600 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl relative group">
+  <div style="background-image: url('./assets/courses/Animation_Gold.jpg');" class="h-48 bg-cover bg-center"></div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">Animation Pro</h3>
+    <p class="text-indigo-200 mb-4">
+      A well-rounded course for specializing in both 2D and 3D animation workflows.
+      <ul class="text-white mt-2">
+        <li>○ Blend of traditional and digital animation practices.</li>
+        <li>○ Software training in Maya, Blender, and After Effects.</li>
+        <li>○ Storytelling, timing, rigging, and character performance techniques.</li>
+      </ul>
+    </p>
+    <div class="absolute bottom-6 right-6 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full">
+      <i class="ri-arrow-right-line text-white arrow-icon"></i>
+    </div>
+  </div>
+</div>
+
+
+  
+
+</div>
+<div class="bg-gray-200 p-4 text-center mt-12">
 <p class="text-gray-700 mb-4">Call us for a rewarding career</p>
 <a href="#registration"><button class="bg-primary hover:bg-green-700 text-white py-3 px-8 !rounded-button whitespace-nowrap transition duration-300 font-medium">
 FILL THE FORM
@@ -499,104 +748,123 @@ FILL THE FORM
 <!-- Why Toads Section -->
 <section class="py-16 bg-gray-50">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12 text-primary">WHY Toads?</h2>
+    <h2 class="text-3xl font-bold text-center mb-2 text-primary">WHY Toads?</h2>
+    <p class="mb-12 text-center font-bold">    At Toads Academy, we don’t just teach — we prepare our students for the future. With
+      cutting-edge technologies, industry collaborations, and hands-on experiences, we offer a
+      learning journey like no other. Here’s why Toads is the ultimate destination for aspiring artists
+      and creatives:</p>
+
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Feature 1 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-rocket-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Guaranteed Internship to Job Path</h3>
-        <p class="text-gray-600">Begin with an industry-backed internship that leads directly to full-time career opportunities with our partner studios.</p>
-      </div>
-      <!-- Feature 2 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-computer-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Master Emerging Technologies</h3>
-        <p class="text-gray-600">Stay ahead of the curve with hands-on training in cutting-edge tools and industry-leading software and techniques.</p>
-      </div>
-      <!-- Feature 3 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-footprint-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Studio Environment Learning</h3>
-        <p class="text-gray-600">Train in a professional production setup that mirrors real-world studios, preparing you for immediate industry integration.</p>
-      </div>
-      <!-- Feature 4 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-robot ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">AI-Integrated Curriculum</h3>
-        <p class="text-gray-600">Leverage AI-powered tools that enhance your creative workflow and accelerate your learning process.</p>
-      </div>
-      <!-- Feature 5 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-project-diagram-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Live Project Experience</h3>
-        <p class="text-gray-600">Work on actual industry projects to build an impressive portfolio that demonstrates real production experience.</p>
-      </div>
-      <!-- Feature 6 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-palette-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Industry Professional Training</h3>
-        <p class="text-gray-600">Learn directly from active studio artists who bring current industry practices and insights to your education.</p>
-      </div>
-      <!-- Feature 7 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-handshake-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Complete Placement Support</h3>
-        <p class="text-gray-600">Receive comprehensive career guidance, interview preparation, and direct connections to hiring studios.</p>
-      </div>
-      <!-- Feature 8 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-global-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Global Career Opportunities</h3>
-        <p class="text-gray-600">Access employment possibilities across India and international markets through our global studio network.</p>
-      </div>
-      <!-- Feature 9 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-comments-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Global Studio Network</h3>
-        <p class="text-gray-600">Connect with leading production houses and industry experts through our extensive professional network.</p>
-      </div>
-      <!-- Feature 10 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-award-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">MESC Certification</h3>
-        <p class="text-gray-600">Earn industry-recognized credentials from the Media & Entertainment Skills Council that validate your expertise.</p>
-      </div>
-      <!-- Feature 11 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-book-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Industry-Crafted Curriculum</h3>
-        <p class="text-gray-600">Follow a comprehensive syllabus designed by active professionals to ensure job-ready skills development.</p>
-      </div>
-      <!-- Feature 12 -->
-      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-          <i class="ri-map-pin-line ri-xl text-primary"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Studio Visits & Industry Exposure</h3>
-        <p class="text-gray-600">Gain firsthand experience of professional workflows through exclusive visits to operational production studios.</p>
-      </div>
+   <!-- Card 1 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-rocket-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Emerging Technology</h3>
+  <p class="text-gray-600">Master cutting-edge tools shaping the future of creative industries.</p>
+</div>
+
+<!-- Card 2 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-building-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Studio Environment</h3>
+  <p class="text-gray-600">Work in a studio-like setting, simulating real-world scenarios.</p>
+</div>
+
+<!-- Card 3 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-briefcase-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">100% Internship Opportunities</h3>
+  <p class="text-gray-600">Gain hands-on experience through guaranteed internships.</p>
+</div>
+
+<!-- Card 4 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-rocket-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">AI Integrated Course</h3>
+  <p class="text-gray-600">Explore AI’s role in enhancing creativity and workflow.</p>
+</div>
+
+<!-- Card 5 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-projector-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Live Project Work</h3>
+  <p class="text-gray-600">Collaborate on live projects to build your professional portfolio.</p>
+</div>
+
+<!-- Card 6 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-user-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Training By Studio Artists</h3>
+  <p class="text-gray-600">Learn from industry professionals with real-world experience.</p>
+</div>
+
+<!-- Card 7 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-briefcase-5-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">100% Placement Assistance</h3>
+  <p class="text-gray-600">Get full support to land your dream job.</p>
+</div>
+
+<!-- Card 8 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-globe-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Overseas Placements</h3>
+  <p class="text-gray-600">Explore global opportunities with overseas placements.</p>
+</div>
+
+<!-- Card 9 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-earth-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">National & International Studio Interaction</h3>
+  <p class="text-gray-600">Engage with top studios, gaining global industry exposure.</p>
+</div>
+
+<!-- Card 10 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-certificate-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Affiliation with MESC</h3>
+  <p class="text-gray-600">Accredited by the Media and Entertainment Skills Council.</p>
+</div>
+
+<!-- Card 11 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-pencil-ruler-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Industry-Approved Curriculum</h3>
+  <p class="text-gray-600">Curriculum designed by industry experts for real-world relevance.</p>
+</div>
+
+<!-- Card 12 -->
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+    <i class="ri-map-pin-line ri-xl text-primary"></i>
+  </div>
+  <h3 class="text-lg font-bold mb-2">Studio Visits</h3>
+  <p class="text-gray-600">Experience creative studios firsthand through regular visits.</p>
+</div>
+
+
     </div>
   </div>
 </section>
@@ -605,9 +873,16 @@ FILL THE FORM
 <section class="py-16 bg-gray-100">
 <div class="container mx-auto px-4 text-center">
 <h2 class="text-2xl md:text-3xl font-bold mb-6">Your skills. Your future. Your stage. Train with Toads Animation and step into the world of Media & Entertainment.</h2>
-<a href="#registration"><button class="bg-primary hover:bg-green-700 text-white py-3 px-8 !rounded-button whitespace-nowrap transition duration-300 font-medium">
+
+  <a href="#registration"><button class="bg-primary hover:bg-green-700 text-white py-3 px-8 !rounded-button whitespace-nowrap transition duration-300 font-medium">
 FILL THE FORM
 </button></a>
+<p class="mt-5"></p>
+<a href="#registration"><button class="bg-primary hover:bg-green-700 text-white py-3 px-8 !rounded-button whitespace-nowrap transition duration-300 font-medium">
+  Visit Website For More Details
+  </button></a>
+
+
 </div>
 </section>
 <!-- Disclaimer -->
@@ -714,6 +989,10 @@ document.getElementById("contactForm3").addEventListener("submit", async (e) => 
         statusMessage.style.color = "red";
     }
 });
+
+document.getElementById('closeForm').addEventListener('click', function() {
+    document.getElementById('enquiryForm').style.display = 'none';
+  });
 
 
 </script>
